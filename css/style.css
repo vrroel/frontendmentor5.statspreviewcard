@@ -65,8 +65,8 @@ ul {
 }
 
 .card-img {
-  background-image: url("/images/image-header-desktop.jpg");
   background-color: var(--soft-violet);
+  background-image: url("/images/image-header-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
