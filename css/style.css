@@ -1,0 +1,156 @@
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white1: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white2: hsla(0, 0%, 100%, 0.6);
+}
+
+/*
+### Primary
+
+font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif;
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): hsl(277, 64%, 61%)
+
+### Neutral
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
+*/
+
+body {
+  background: var(--very-dark-blue);
+  font-size: 15px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.card {
+  max-width: 1110px;
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  justify-content: space-between;
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card-img {
+  background-image: url("/images/image-header-desktop.jpg");
+  background-color: var(--soft-violet);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.card-content {
+  padding: 4em;
+}
+
+.card-title {
+  color: var(--white);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.4rem;
+}
+
+.card-title span {
+  color: var(--soft-violet);
+}
+
+.card-text {
+  color: var(--slightly-transparent-white1);
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+  max-width: 38ch;
+  margin-bottom: 4rem;
+}
+
+.card-stats {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  max-width: 32ch;
+  color: var(--white);
+  font-size: 1.2em;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Lexend Deca", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.card-stats span {
+  color: var(--slightly-transparent-white2);
+  font-weight: 400;
+  font-size: 0.45em;
+  margin-top: 0.5em;
+  display: block;
+}
+
+@media (max-width: 430px) {
+  body {
+    display: block;
+    height: initial;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows:auto 1fr;
+    gap: 0;
+    text-align: center;
+  }
+
+  .card-img{
+    grid-row: 1;
+    height: 240px;
+  }
+
+  .card-content{
+    padding: 2.2em;
+  }
+
+  .card-title{
+    font-size: 1.9em;
+  }
+
+  .card-text{
+    margin-bottom: 2em;
+  }
+
+  .card-stats{
+    flex-direction: column;
+    gap: 2em;
+  }
+}
